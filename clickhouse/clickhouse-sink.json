@@ -1,0 +1,17 @@
+{
+  "name": "clickhouse-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "connection.url": "jdbc:clickhouse://clickhouse:8123/coin_price_db",
+    "tasks.max": 1,
+    "connection.user": "default",
+    "connection.password": "",
+    "topics": "coin_data",
+    "auto.create": true,
+    "auto.evolve": true,
+    "insert.mode": "insert",
+    "pk.mode": "record_value",
+    "pk.fields": "id",
+    "table.name.format": "coin_data"
+  }
+}

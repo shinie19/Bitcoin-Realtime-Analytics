@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+    networks:
+      - airflow-net
+
+  scheduler:
+    build: .
+    volumes:
+      - ./dags:/airflow/dags
+      - ./logs:/airflow/logs
+      - ./plugins:/airflow/plugins
+    networks:
+      - airflow-net
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    command: ["airflow", "scheduler"]
+
+  webserver:
+    build: .
+    entrypoint: ./entrypoint.sh
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/airflow/dags
+      - ./logs:/airflow/logs
+      - ./plugins:/airflow/plugins
+    networks:
+      - airflow-net
+    depends_on:
+      - postgres
+      - scheduler
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+
+volumes:
+  postgres-data:
+
+networks:
+  airflow-net:
