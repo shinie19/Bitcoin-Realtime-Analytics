@@ -5,9 +5,9 @@
 [![Posgresql](https://img.shields.io/badge/PosgreSQL-15.2-blue)](https://www.postgresql.org/)
 [![Grafana](https://img.shields.io/badge/Grafana-9.5.1-orange)](https://grafana.com/docs/)
 
-Project Bitcoin Realtime Analytic is a data analysis project that focuses on real-time Bitcoin analytics, utilizing modern tools and techniques such as Airflow, Kafka, Clickhouse, and Grafana.
+Project Bitcoin Realtime Analytic is a data project that focuses on real-time Bitcoin analytics, utilizing modern tools and techniques such as Airflow, Kafka, Clickhouse and Grafana. All of them was deployed on Docker.
 
-Specifically, Bitcoin price and transaction data are collected using Kafka, then stored and processed using Clickhouse to ensure consistency and high performance. Airflow is used to schedule automated data processing tasks and manage the data processing pipeline. Finally, Grafana is used to visualize the data and provide reports to users.
+Specifically, Bitcoin prices are collected using Kafka, then stored and processed using Clickhouse to ensure consistency and high performance. Airflow is used to schedule automated data processing tasks and manage the data processing pipeline. Finally, Grafana is used to visualize the data and provide reports to users.
 
 ## Screenshots
 
