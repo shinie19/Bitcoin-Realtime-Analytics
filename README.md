@@ -18,10 +18,10 @@ Specifically, Bitcoin price and transaction data are collected using Kafka, then
 ## Contents
 - [Screenshots](#screenshots)
 - [Example](#example)
-    - [1. Install docker, docker-compose](https://github.com/apot-group/real-time-analytic#1-install-docker-and-docker-compose)
-    - [2. Pull git repo](https://github.com/apot-group/real-time-analytic#2-pull-git-repo)
-    - [3. Start Server](https://github.com/apot-group/real-time-analytic#3-start-server)
-- [Contact Us](#contact-us)
+    - [1. Install docker, docker-compose](https://github.com/shinie19/Bitcoin-Realtime-Analytics#1-install-docker-and-docker-compose)
+    - [2. Pull git repo](https://github.com/shinie19/Bitcoin-Realtime-Analytics#2-pull-git-repo)
+    - [3. Start Server](https://github.com/shinie19/Bitcoin-Realtime-Analytics#3-start-server)
+- [Contact me](#contact-me)
 
 ## Example
 
